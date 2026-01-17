@@ -6,7 +6,7 @@ const { cachedFetch } = require('../utils');
 module.exports = [
   {
     method: 'GET',
-    path: '/api/moods',
+    path: '/bible/api/moods',
     handler: () => {
       return {
         data: [
@@ -24,7 +24,7 @@ module.exports = [
   },
   {
     method: 'POST',
-    path: '/api/moods/verses/recommend',
+    path: '/bible/api/moods/verses/recommend',
     handler: async (request) => {
       const { mood, thought } = request.payload;
 
@@ -73,7 +73,7 @@ Example Response:
   },
   {
     method: 'POST',
-    path: '/api/moods/reflections',
+    path: '/bible/api/moods/reflections',
     handler: async (request, h) => {
       try {
         const { reflection, selectedFeeling, mood, thought, userId } = request.payload;
@@ -105,7 +105,7 @@ Example Response:
   },
   {
     method: 'GET',
-    path: '/api/moods/reflections/{userId}',
+    path: '/bible/api/moods/reflections/{userId}',
     handler: async (req) => {
       const { userId } = req.params;
       const { month, year } = req.query;

@@ -6,7 +6,7 @@ const { cachedFetch } = require('../utils');
 module.exports = [
   {
     method: 'GET',
-    path: '/api/bibles',
+    path: '/bible/api/bibles',
     handler: async () => {
       return cachedFetch('bibles', async () => {
         const res = await bibleApi.get('/bibles');
@@ -16,7 +16,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/api/bibles/{bibleId}/books',
+    path: '/bible/api/bibles/{bibleId}/books',
     handler: async (req) => {
       const { bibleId } = req.params;
       const cacheKey = `books:${bibleId}`;
@@ -29,7 +29,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/api/bibles/{bibleId}/books/{bookId}/chapters',
+    path: '/bible/api/bibles/{bibleId}/books/{bookId}/chapters',
     handler: async (req) => {
       const { bibleId, bookId } = req.params;
       const cacheKey = `chapters:${bibleId}:${bookId}`;
@@ -42,7 +42,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/api/bibles/{bibleId}/chapters/{chapterId}/verses',
+    path: '/bible/api/bibles/{bibleId}/chapters/{chapterId}/verses',
     handler: async (req) => {
       const { bibleId, chapterId } = req.params;
       const cacheKey = `chapter:${bibleId}:${chapterId}`;
@@ -56,7 +56,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/api/bibles/{bibleId}/verses/{verseId}',
+    path: '/bible/api/bibles/{bibleId}/verses/{verseId}',
     handler: async (req) => {
       const { bibleId, verseId } = req.params;
       const cacheKey = `verse:${bibleId}:${verseId}`;
@@ -69,7 +69,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/api/chapters/{chapterId}',
+    path: '/bible/api/chapters/{chapterId}',
     handler: async (req) => {
       const { chapterId } = req.params;
       const cacheKey = `chapter:${chapterId}`;
@@ -83,7 +83,7 @@ module.exports = [
   // Cache management endpoints
   {
     method: 'POST',
-    path: '/api/cache/clear/{pattern}',
+    path: '/bible/api/cache/clear/{pattern}',
     handler: async (req) => {
       const { pattern } = req.params;
       const keys = await redis.keys(pattern || '*');
@@ -101,7 +101,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/api/cache/stats',
+    path: '/bible/api/cache/stats',
     handler: async () => {
       const info = await redis.info();
       const keys = await redis.keys('*');

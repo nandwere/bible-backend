@@ -6,7 +6,7 @@ module.exports = [
     // 1. CREATE: Save a new bookmark (any type)
     {
         method: 'POST',
-        path: '/api/bookmarks',
+        path: '/bible/api/bookmarks',
         handler: async (request, h) => {
             try {
                let
@@ -143,7 +143,7 @@ module.exports = [
     // 2. CHECK: Check if something is bookmarked
     {
         method: 'POST',
-        path: '/api/bookmarks/check',
+        path: '/bible/api/bookmarks/check',
         handler: async (request, h) => {
             try {
 
@@ -230,7 +230,7 @@ module.exports = [
     // 3. GET: Get user's bookmarks with filters
     {
         method: 'GET',
-        path: '/api/bookmarks/user/{userId}',
+        path: '/bible/api/bookmarks/user/{userId}',
         handler: async (request, h) => {
             const { userId } = request.params;
             const {
@@ -292,7 +292,7 @@ module.exports = [
     // 4. GET: Get bookmark by ID
     {
         method: 'GET',
-        path: '/api/bookmarks/{bookmarkId}',
+        path: '/bible/api/bookmarks/{bookmarkId}',
         handler: async (request, h) => {
             const { bookmarkId } = request.params;
 
@@ -324,7 +324,7 @@ module.exports = [
     // 5. UPDATE: Update bookmark (mainly for notes)
     {
         method: 'PUT',
-        path: '/api/bookmarks/{bookmarkId}',
+        path: '/bible/api/bookmarks/{bookmarkId}',
         handler: async (request, h) => {
             const { bookmarkId } = request.params;
             const { note, tags, title } = request.payload;
@@ -381,7 +381,7 @@ module.exports = [
     // 6. DELETE: Remove a bookmark
     {
         method: 'DELETE',
-        path: '/api/bookmarks/{bookmarkId}',
+        path: '/bible/api/bookmarks/{bookmarkId}',
         handler: async (request, h) => {
             const { bookmarkId } = request.params;
             const { userId } = request.query;
@@ -424,7 +424,7 @@ module.exports = [
     // 7. GET: Get bookmark counts by type
     {
         method: 'GET',
-        path: '/api/bookmarks/stats/{userId}',
+        path: '/bible/api/bookmarks/stats/{userId}',
         handler: async (request, h) => {
             const { userId } = request.params;
 
@@ -476,7 +476,7 @@ module.exports = [
     // 8. GET: Search bookmarks
     {
         method: 'GET',
-        path: '/api/bookmarks/search/{userId}',
+        path: '/bible/api/bookmarks/search/{userId}',
         handler: async (request, h) => {
             const { userId } = request.params;
             const { q, type, limit = 20 } = request.query;
