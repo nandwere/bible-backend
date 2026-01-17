@@ -1,0 +1,28 @@
+{
+  "name": "bible-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "debug": "node --inspect src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hapi/hapi": "^21.4.4",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "hapi-pino": "^13.0.0",
+    "ioredis": "^5.9.2",
+    "mongoose": "^9.1.4",
+    "openai": "^6.16.0",
+    "redis": "^5.10.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
