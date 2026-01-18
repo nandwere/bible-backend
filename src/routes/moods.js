@@ -10,14 +10,14 @@ module.exports = [
     handler: () => {
       return {
         data: [
-          { id: 1, name: 'Anxious', emoji: '😰' },
-          { id: 2, name: 'Stressed', emoji: '😫' },
-          { id: 3, name: 'Confused', emoji: '😕' },
-          { id: 4, name: 'Sad', emoji: '😢' },
-          { id: 5, name: 'Hopeful', emoji: '😊' },
-          { id: 6, name: 'Regret', emoji: '😔' },
-          { id: 7, name: 'Lost', emoji: '🫣' },
-          { id: 8, name: 'Betrayed', emoji: '😠' },
+          { id: 1, name: 'Anxious', emoji: '😰', color: '#81BDF0' },
+          { id: 2, name: 'Stressed', emoji: '😫' ,color: '#DA4943'},
+          { id: 3, name: 'Confused', emoji: '😕', color: '#AF5EBF' },
+          { id: 4, name: 'Sad', emoji: '😢', color: '#81C9CF' },
+          { id: 5, name: 'Hopeful', emoji: '😊' ,color: '#74C45A'},
+          { id: 6, name: 'Regret', emoji: '😔' ,color: '#8C929E'},
+          { id: 7, name: 'Lost', emoji: '🫣', color: '#E99F3A' },
+          { id: 8, name: 'Betrayed', emoji: '😠', color: '#BC453C' },
         ],
       };
     },

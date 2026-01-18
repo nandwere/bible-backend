@@ -8,6 +8,13 @@ module.exports = [
     method: 'GET',
     path: '/bible/api/bibles',
     handler: async () => {
+      const single = process.env.SINGLE_BIBLE;
+      if (single) {
+        return cachedFetch('bibles1', async () => {
+          const res = await bibleApi.get('/bibles/06125adad2d5898a-01');
+          return { data: [res.data?.data] };
+        });
+      }
       return cachedFetch('bibles', async () => {
         const res = await bibleApi.get('/bibles');
         return res.data;
