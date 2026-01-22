@@ -21,7 +21,7 @@ module.exports = [
           { id: 9, name: 'Calm', emoji: '💆', color: '#8b8281' },
           { id: 10, name: 'Overwhelmed', emoji: '😵', color: '#e5685f' },
           { id: 11, name: 'Tired', emoji: '😴', color: '#c1190d' },
-          { id: 12, name: 'Lonely', emoji: '🏝️', color: '#1b1716' },
+          { id: 12, name: 'Lonely', emoji: '🏝️', color: '#973b24' },
           { id: 13, name: 'Grateful', emoji: '🙏', color: '#0bcc35' },
           { id: 14, name: 'Content', emoji: '😌', color: '#cb790c' },
           { id: 15, name: 'Motivated', emoji: '🚀', color: '#0378f4' },
