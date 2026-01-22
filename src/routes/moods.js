@@ -18,6 +18,14 @@ module.exports = [
           { id: 6, name: 'Regret', emoji: '😔' ,color: '#8C929E'},
           { id: 7, name: 'Lost', emoji: '🫣', color: '#E99F3A' },
           { id: 8, name: 'Betrayed', emoji: '😠', color: '#BC453C' },
+          { id: 9, name: 'Calm', emoji: '💆', color: '#8b8281' },
+          { id: 10, name: 'Overwhelmed', emoji: '😵', color: '#e5685f' },
+          { id: 11, name: 'Tired', emoji: '😴', color: '#c1190d' },
+          { id: 12, name: 'Lonely', emoji: '🏝️', color: '#1b1716' },
+          { id: 13, name: 'Grateful', emoji: '🙏', color: '#0bcc35' },
+          { id: 14, name: 'Content', emoji: '😌', color: '#cb790c' },
+          { id: 15, name: 'Motivated', emoji: '🚀', color: '#0378f4' },
+          { id: 16, name: 'Burned Out', emoji: '🔥', color: '#ce037d' },
         ],
       };
     },
@@ -26,13 +34,12 @@ module.exports = [
     method: 'POST',
     path: '/bible/api/moods/verses/recommend',
     handler: async (request) => {
-      const { mood, thought } = request.payload;
+      const { mood } = request.payload;
 
       const prompt = `
 You are a Bible assistant for Fellowship AI App.
 
 The user feels: ${mood}
-The user is thinking: "${thought}"
 
 Return EXACTLY 4 Bible verses that provide encouragement and comfort.
 
@@ -82,7 +89,6 @@ Example Response:
           reflectionText: reflection,
           selectedFeeling: selectedFeeling,
           mood: mood,
-          thought: thought,
           userId: userId
         });
 
